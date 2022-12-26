@@ -29,7 +29,7 @@ import menu from '../assets/images/home_fill.png';
 import close from '../assets/images/home_fill.png';
 
 // Photo
-import photo from '../assets/images/home_fill.png';
+import photo from '../assets/images/person.jpg';
 
 export default function CustomDrawer() {
   const [currentTab, setCurrentTab] = useState("Home");
