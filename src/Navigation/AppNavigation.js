@@ -21,7 +21,6 @@ import Maps from '../screen/Maps';
 import DetailsScreen from '../screen/petAdoptionApp/DetailsScreen';
 import HomeScreen from '../screen/petAdoptionApp/HomeScreen';
 import DrawerNavigator from '../Navigation/DrawerNavigator';
-import CustomDrawer from '../screen/CustomDrawer';
 const AppNavigation = () => {
   ///////DrawerStack//////
   const Drawer = createDrawerNavigator();
@@ -43,11 +42,12 @@ const AppNavigation = () => {
     <NavigationContainer>
       
       <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="CustomDrawer" component={CustomDrawer} />
+    
+      
+      <Stack.Screen name="ApiDummy" component={ApiDummy} />
 
       <Stack.Screen name="Dashboard" component={HomeScreen} />
 
-        <Stack.Screen name="ApiDummy" component={ApiDummy} />
 
         <Stack.Screen name="HomeScreen" component={DrawerNavigator} />
         <Stack.Screen name="DetailsScreen" component={DetailsScreen} />

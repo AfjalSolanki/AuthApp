@@ -28,7 +28,6 @@ export default {
   icBack: require('../assets/images/ic_back.png'),
   goicBack: require('../assets/images/ic_back_icon.png'),
 
-  
   icShow: require('../assets/images/ic_visible.png'),
   icHide: require('../assets/images/ic_hide.png'),
   icLoc: require('../assets/images/ic_loc.png'),
@@ -39,8 +38,8 @@ export default {
   icAdd: require('../assets/images/ic_add.png'),
   icMore: require('../assets/images/ic_more.png'),
   // icClose: require("../assets/images/close.png"),
-  icNavigation: require("../assets/images/navigation.png"),
-  icSetting: require("../assets/images/ic_setting.png"),
+  icNavigation: require('../assets/images/navigation.png'),
+  icSetting: require('../assets/images/ic_setting.png'),
   //bitemoji
   emoji1: require('../assets/images/bitemoji/emoji1.png'),
   emoji2: require('../assets/images/bitemoji/emoji2.png'),
@@ -48,22 +47,17 @@ export default {
   emoji4: require('../assets/images/bitemoji/emoji4.png'),
   emoji5: require('../assets/images/bitemoji/emoji5.png'),
 
+  onboarding1: require('../assets/images/onboarding-1.png'),
+  onboarding2: require('../assets/images/onboarding-2.png'),
+  onboarding3: require('../assets/images/onboarding-3.png'),
+  ///
 
+  bgPattern: require('../assets/images/drawer-cover.jpeg'),
+  user: require('../assets/images/user.jpg'),
+  icBakc: require('../assets/images/back.png'),
 
+  icprofile_fill: require('../assets/images/profile_fill.png'),
+  close: require('../assets/images/closeimage.png'),
 
-
-  onboarding1 : require("../assets/images/onboarding-1.png"),
-  onboarding2 : require("../assets/images/onboarding-2.png"),
-  onboarding3 : require("../assets/images/onboarding-3.png"),
-///
-
-
-bgPattern: require('../assets/images/drawer-cover.jpeg'),
-user: require('../assets/images/user.jpg'),
-icBakc: require('../assets/images/back.png'),
-
-icprofile_fill: require('../assets/images/profile_fill.png'),
-
-// 
-
+  //
 };
