@@ -5,6 +5,7 @@ const comman = {
 
   // api_link
   api_linkairlines: 'https://api.instantwebtools.net/v1/',
+  
   linkairlineshot: 'https://api.sampleapis.com/coffee/',
 };
 export default comman;

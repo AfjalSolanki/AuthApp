@@ -21,6 +21,7 @@ import Maps from '../screen/Maps';
 import DetailsScreen from '../screen/petAdoptionApp/DetailsScreen';
 import HomeScreen from '../screen/petAdoptionApp/HomeScreen';
 import DrawerNavigator from '../Navigation/DrawerNavigator';
+import Api from '../screen/Api'
 const AppNavigation = () => {
   ///////DrawerStack//////
   const Drawer = createDrawerNavigator();
@@ -45,8 +46,10 @@ const AppNavigation = () => {
     
       
       <Stack.Screen name="ApiDummy" component={ApiDummy} />
-
+      
       <Stack.Screen name="Dashboard" component={HomeScreen} />
+
+      <Stack.Screen name="Api" component={Api} />
 
 
         <Stack.Screen name="HomeScreen" component={DrawerNavigator} />

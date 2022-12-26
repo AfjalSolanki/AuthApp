@@ -18,7 +18,8 @@ const BackHeaderComp = ({title}) => {
         <Text style={styles.title}>{title}</Text>
         <TouchableOpacity style={styles.mlauto}
           onPress={() => {
-            console.log('icSearch');
+            // console.log('icSearch');
+            navigation.navigate('Api')
           }}>
           <Image style={styles.icSearch} source={Images.icSearch} />
         </TouchableOpacity>
