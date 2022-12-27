@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import COLORS from '../../const/colors';
-
+// kkkkkk
 const DetailsScreen = ({navigation, route}) => {
   const pet = route.params;
   return (
