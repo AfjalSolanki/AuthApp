@@ -1,16 +1,17 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
-import AppNavigation from './src/Navigation/AppNavigation';
-import {Provider} from 'react-redux';
-import store from './src/redux/store';
-export default function App() {
-  return (
-    <Provider store={store}>
-      <AppNavigation />
-    </Provider>
-  );
-}
-const styles = StyleSheet.create({});
+// import {StyleSheet, Text, View} from 'react-native';
+// import React from 'react';
+// import AppNavigation from './src/Navigation/AppNavigation';
+// import {Provider} from 'react-redux';
+// import store from './src/redux/store';
+// export default function App() {
+//   return (
+//     <Provider store={store}>
+//       <AppNavigation />
+//     </Provider>
+//   );
+// }
+// const styles = StyleSheet.create({});
+//////ssss///
 // import React from 'react';
 // import {NavigationContainer} from '@react-navigation/native';
 // import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -85,3 +86,17 @@ const styles = StyleSheet.create({});
 // export default App;
 
 
+import * as React from 'react';
+import {SafeAreaView, Text} from 'react-native';
+import {   NavigationContainer} from '@react-navigation/native';
+// import AuthNavigator from '../AuthApp/src/sideandbottomnaviagtion-master/navigations/AuthNavigator'
+import AuthNavigator from './src/sideandbottomnaviagtion-master/navigations/AuthNavigator'
+export default function App() {
+  // isAuthenticated = is...
+  return (
+    <NavigationContainer>
+      {/* {isAuthenticated ? AuthNavigator : DrawerNavigator } */}
+      <AuthNavigator />
+    </NavigationContainer>
+  );
+}
