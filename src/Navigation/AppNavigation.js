@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Signup from '../screen/Signup';
 import BottomTabs from './BottomTabs';
 import SplashScreen from '../screen/SplashScreen';
 import LoginScreen from '../screen/LoginScreen';
@@ -22,6 +21,9 @@ import DetailsScreen from '../screen/petAdoptionApp/DetailsScreen';
 import HomeScreen from '../screen/petAdoptionApp/HomeScreen';
 import DrawerNavigator from '../Navigation/DrawerNavigator';
 import Api from '../screen/Api'
+import Login from '../screen/SnapDesign/Login/Login'
+import Signup from '../screen/SnapDesign/Signup/Signup'
+
 const AppNavigation = () => {
   ///////DrawerStack//////
   const Drawer = createDrawerNavigator();
@@ -43,7 +45,9 @@ const AppNavigation = () => {
     <NavigationContainer>
       
       <Stack.Navigator screenOptions={{headerShown: false}}>
-    
+    <Stack.Screen name='Signups' component={Signup}/>
+    <Stack.Screen name='Login' component={Login}/>
+
       
       <Stack.Screen name="ApiDummy" component={ApiDummy} />
       
