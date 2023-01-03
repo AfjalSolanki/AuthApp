@@ -20,9 +20,9 @@ import Maps from '../screen/Maps';
 import DetailsScreen from '../screen/petAdoptionApp/DetailsScreen';
 import HomeScreen from '../screen/petAdoptionApp/HomeScreen';
 import DrawerNavigator from '../Navigation/DrawerNavigator';
-import Api from '../screen/Api'
-import Login from '../screen/SnapDesign/Login/Login'
-import Signup from '../screen/SnapDesign/Signup/Signup'
+import Api from '../screen/Api';
+import Login from '../screen/SnapDesign/Login/Login';
+import Signup from '../screen/SnapDesign/Signup/Signup';
 
 const AppNavigation = () => {
   ///////DrawerStack//////
@@ -43,20 +43,18 @@ const AppNavigation = () => {
   const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
-      
       <Stack.Navigator screenOptions={{headerShown: false}}>
-    <Stack.Screen name='Signups' component={Signup}/>
-    <Stack.Screen name='Login' component={Login}/>
+      <Stack.Screen name="Dashboard" component={DrawerStack} />
 
-      
-      <Stack.Screen name="ApiDummy" component={ApiDummy} />
-      
-      <Stack.Screen name="Dashboard" component={HomeScreen} />
+        <Stack.Screen name="Signups" component={Signup} />
+        <Stack.Screen name="Login" component={Login} />
 
-      <Stack.Screen name="Api" component={Api} />
+        <Stack.Screen name="ApiDummy" component={ApiDummy} />
 
 
-        <Stack.Screen name="HomeScreen" component={DrawerNavigator} />
+        <Stack.Screen name="Api" component={Api} />
+        <Stack.Screen name="HomeScreen" component={BottomTabs} />
+
         <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
 
         <Stack.Screen name="Maps" component={Maps} />

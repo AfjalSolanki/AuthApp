@@ -1,4 +1,4 @@
-// import messaging from '@react-native-firebase/messaging';
+import messaging from '@react-native-firebase/messaging';
 import React, {useState, useEffect} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import strings from '../../../contants/lang';
@@ -29,10 +29,8 @@ const Signup = () => {
     gettokendata();
   }, []);
   const gettokendata = async () => {
-    // console.log(gettokendata())
-    // fcmToken = await 
-    // messaging().getToken();
-    // console.log('======fcmToken======', messaging());
+    console.log('======fcmToken======', messaging());
+    console.log("jjjj")
   };
   return (
     <View style={{flex: 1, justifyContent: 'space-between'}}>
