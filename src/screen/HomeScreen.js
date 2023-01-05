@@ -17,6 +17,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import CategoryMenuItem from '../components/CategoryMenuItem';
 import ButtomComman from '../components/ButtomComman';
 // import { Auth } from '../services';
+import CountryCode from '../contants/CountryCode';
 const sortStyle = isActive =>
   isActive
     ? styles.sortListItem
@@ -24,8 +25,7 @@ const sortStyle = isActive =>
 const HomeScreen = ({navigation}) => {
   const [activeCategory, setActiveCategory] = useState();
   const [activeSortItem, setActiveSortItem] = useState('recent');
-  const [email, setEmail] = useState();
-
+  const [data, setdata] = useState([1, 2, 3, 4, 5]);
   return (
     <View style={styles.container}>
       <StatusBar
@@ -90,7 +90,9 @@ const HomeScreen = ({navigation}) => {
           ))}
         </View>
       </View>
-      <ScrollView style={styles.listContainer}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={styles.listContainer}>
         <View style={styles.horizontalListContainer}>
           <View style={styles.listHeader}>
             <Text style={styles.listHeaderTitle}>Top Rated</Text>
@@ -130,10 +132,27 @@ const HomeScreen = ({navigation}) => {
           </TouchableOpacity>
         </View>
         <Separator height={Display.setHeight(5)} />
-        <ButtomComman
-          Title='Sign Out'
-          onPress={() => console.log('console'  )}
-        />
+        <ButtomComman Title="Sign Out" onPress={() => console.log('console')} />
+        {/* <FlatList
+          data={data}
+          renderItem={item => {
+            <TouchableOpacity style={styles.boxView}>
+              <Text style={styles.sortListItemText}>Trending</Text>
+            </TouchableOpacity>;
+          }}
+        /> */}
+        <View style={{}}>
+          <FlatList
+            data={CountryCode}
+            renderItem={({item}) => (
+              <View>
+                <Text>{item.name}</Text>
+                <Text>{item.dial_code}</Text>
+                <Text>{item.code}</Text>
+              </View>
+            )}
+          />
+        </View>
       </ScrollView>
     </View>
   );
@@ -270,5 +289,20 @@ const styles = StyleSheet.create({
     fontSize: 13,
     lineHeight: 13 * 1.4,
     fontFamily: Fonts.POPPINS_SEMI_BOLD,
+  },
+  boxView: {
+    marginHorizontal: 20,
+    marginTop: 10,
+    backgroundColor: Colors.DEFAULT_WHITE,
+    elevation: 3,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+    paddingBottom: 20,
+    // add
+    height: Display.setWidth(80),
+    alignItems: 'center',
+    justifyContent: 'center',
+    // borderColor: 'red',
+    borderWidth: 2,
   },
 });
