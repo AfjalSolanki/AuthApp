@@ -23,6 +23,8 @@ import DrawerNavigator from '../Navigation/DrawerNavigator';
 import Api from '../screen/Api';
 import Login from '../screen/SnapDesign/Login/Login';
 import Signup from '../screen/SnapDesign/Signup/Signup';
+import ReactNativeDateTimePicker from '../screen/React Native Date & Time Picker with Modal - Android & Ios/ReactNativeDateTimePicker';
+import APIContainer from '../screen/APIContainer';
 
 const AppNavigation = () => {
   ///////DrawerStack//////
@@ -44,13 +46,19 @@ const AppNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Dashboard" component={DrawerStack} />
+        <Stack.Screen name="APIContainer" component={APIContainer} />
+
+        <Stack.Screen
+          name="ReactNativeDateTimePicker"
+          component={ReactNativeDateTimePicker}
+        />
+
+        <Stack.Screen name="Dashboard" component={DrawerStack} />
 
         <Stack.Screen name="Signups" component={Signup} />
         <Stack.Screen name="Login" component={Login} />
 
         <Stack.Screen name="ApiDummy" component={ApiDummy} />
-
 
         <Stack.Screen name="Api" component={Api} />
         <Stack.Screen name="HomeScreen" component={BottomTabs} />

@@ -145,7 +145,12 @@ const HomeScreen = ({navigation}) => {
           <FlatList
             data={CountryCode}
             renderItem={({item}) => (
-              <View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  margin: 10,
+                }}>
                 <Text>{item.name}</Text>
                 <Text>{item.dial_code}</Text>
                 <Text>{item.code}</Text>

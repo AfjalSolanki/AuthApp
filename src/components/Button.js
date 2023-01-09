@@ -1,6 +1,6 @@
 import React from 'react';
 import {TouchableOpacity, Text} from 'react-native';
-import { Colors } from '../contants';
+import {Colors} from '../contants';
 import COLORS from '../conts/colors';
 const Button = ({title, onPress = () => {}}) => {
   return (
@@ -11,7 +11,7 @@ const Button = ({title, onPress = () => {}}) => {
         height: 55,
         width: '100%',
         // backgroundColor: COLORS.blue,
-        backgroundColor:Colors.DEFAULT_GREEN,
+        backgroundColor: Colors.DEFAULT_GREEN,
         marginVertical: 20,
         justifyContent: 'center',
         alignItems: 'center',
