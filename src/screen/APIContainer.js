@@ -10,7 +10,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Button from '../../src/components/Button';
-const APIContainer = () => {
+import AppHeader from '../comman/AppHeader';
+const APIContainer = ({route, navigation}) => {
   const [axiosData, setAxiosData] = useState([]);
   const [user, setuser] = useState([]);
   const goForAxios = async () => {
@@ -46,6 +47,13 @@ const APIContainer = () => {
   };
   return (
     <View style={styles.parentContainer}>
+      <AppHeader
+        back
+        onPressBack={() => navigation.goBack()}
+        title={route.name}
+        right="more-vertical"
+        onRightPress={() => console.log('right')}
+      />
       <Button
         title="show Time Picker"
         onPress={() => {

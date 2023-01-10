@@ -8,14 +8,14 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import { Colors, Fonts, Images } from '../contants';
+import {Colors, Fonts, Images} from '../contants';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Separator from '../components/Separator';
-import { Display } from '../utils';
+import {Display} from '../utils';
 
-const CartScreen = ({ navigation }) => {
+const CartScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <StatusBar

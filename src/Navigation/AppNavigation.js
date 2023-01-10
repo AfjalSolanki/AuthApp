@@ -46,25 +46,18 @@ const AppNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="APIContainer" component={APIContainer} />
-
         <Stack.Screen
           name="ReactNativeDateTimePicker"
           component={ReactNativeDateTimePicker}
         />
-
+        <Stack.Screen name="APIContainer" component={APIContainer} />
         <Stack.Screen name="Dashboard" component={DrawerStack} />
-
         <Stack.Screen name="Signups" component={Signup} />
         <Stack.Screen name="Login" component={Login} />
-
         <Stack.Screen name="ApiDummy" component={ApiDummy} />
-
         <Stack.Screen name="Api" component={Api} />
         <Stack.Screen name="HomeScreen" component={BottomTabs} />
-
         <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
-
         <Stack.Screen name="Maps" component={Maps} />
         <Stack.Screen name="ReduxScreen" component={ReduxScreen} />
         <Stack.Screen name="ListData" component={ListData} />

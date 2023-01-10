@@ -5,10 +5,12 @@ import {Provider} from 'react-redux';
 import store from './src/redux/store';
 // import InstagramNavigation from './App/InstagramNavigation';
 // import SideandbottomNaviagtion from './src/sideandbottomnaviagtion-master/SideandbottomNaviagtion';
+import ReactNativeNavigation from './ReactNativeUI/ReactNativeNavigation';
 export default function App() {
   return (
     <Provider store={store}>
-      <AppNavigation />
+      {/* <AppNavigation /> */}
+      <ReactNativeNavigation />
       {/* <InstagramNavigation /> */}
       {/* <SideandbottomNaviagtion /> */}
     </Provider>
