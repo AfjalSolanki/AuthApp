@@ -14,9 +14,9 @@ import Dropdowns from '../components/Dropdowns';
 import OtpInput from '../components/OtpInput';
 // import HeaderTabs from '../components/HeaderTabs'
 let fruits = [
-  {id: 1, name: 'text1'},
-  {id: 2, name: 'text2'},
-  {id: 3, name: 'text3'},
+  {id: 1, name: 'afjal'},
+  {id: 2, name: 'khan'},
+  {id: 3, name: 'deswali'},
   {id: 4, name: 'text4'},
   {id: 5, name: 'text5'},
   {id: 6, name: 'text6'},
@@ -25,7 +25,7 @@ let fruits = [
   {id: 9, name: 'text9'},
 ];
 const countries = [
-  {country: 'Afghanistan', code: '93', iso: 'AF'},
+  {codecountry: 'Afghanistan', code: '93', iso: 'AF'},
   {country: 'Albania', code: '355', iso: 'AL'},
   {country: 'Algeria', code: '213', iso: 'DZ'},
   {country: 'American Samoa', code: '1-684', iso: 'AS'},
@@ -386,9 +386,14 @@ const Dropdown = () => {
                     onSearch('');
                     setSearch('');
                   }}>
-                  <Text style={{fontWeight: '600', fontSize: 16}}>
-                    {item.country}
-                  </Text>
+                  <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                    <Text style={{fontWeight: '600', fontSize: 16}}>
+                      {item.country}
+                    </Text>
+                    {/* <Text style={{fontWeight: '600', fontSize: 16}}>
+                      {item.code}
+                    </Text> */}
+                  </View>
                 </TouchableOpacity>
               );
             }}
@@ -399,7 +404,7 @@ const Dropdown = () => {
       <OtpInput
         onChangeText={(e, index) => handleCode(e, index)}
         value={codeArr}
-        noOfInput={6}
+        noOfInput={5}
       />
     </View>
   );

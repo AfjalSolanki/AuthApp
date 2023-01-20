@@ -83,7 +83,7 @@ const RootStack = () => {
       <Stack.Screen
         name="Home"
         component={Home}
-        options={{title: 'React-Native Ui', headerShown: true}}
+        options={{headerShown: true}}
       />
       <Stack.Screen name="Tab1" component={AnimTab1} />
       <Stack.Screen name="Tab2" component={AnimTab2} />

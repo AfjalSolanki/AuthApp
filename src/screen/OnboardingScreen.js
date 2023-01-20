@@ -112,7 +112,7 @@ const OnboardingScreen = ({navigation}) => {
             <View style={{height: 50}}>
               <TouchableOpacity
                 style={styles.btn}
-                onPress={() => console.log('console')}>
+                onPress={() => console.log('console next page')}>
                 <Text style={{fontWeight: 'bold', fontSize: 15}}>
                   GET STARTED
                 </Text>

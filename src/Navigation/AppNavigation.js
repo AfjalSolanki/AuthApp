@@ -25,6 +25,7 @@ import Login from '../screen/SnapDesign/Login/Login';
 import Signup from '../screen/SnapDesign/Signup/Signup';
 import ReactNativeDateTimePicker from '../screen/React Native Date & Time Picker with Modal - Android & Ios/ReactNativeDateTimePicker';
 import APIContainer from '../screen/APIContainer';
+import GetToken from '../screen/GetToken';
 
 const AppNavigation = () => {
   ///////DrawerStack//////
@@ -46,6 +47,15 @@ const AppNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Tabe" component={Tabe} />
+
+        <Stack.Screen name="Api" component={Api} />
+
+        <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
+
+        <Stack.Screen name="Dropdown" component={Dropdown} />
+
+        <Stack.Screen name="GetToken" component={GetToken} />
         <Stack.Screen
           name="ReactNativeDateTimePicker"
           component={ReactNativeDateTimePicker}
@@ -55,7 +65,6 @@ const AppNavigation = () => {
         <Stack.Screen name="Signups" component={Signup} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="ApiDummy" component={ApiDummy} />
-        <Stack.Screen name="Api" component={Api} />
         <Stack.Screen name="HomeScreen" component={BottomTabs} />
         <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
         <Stack.Screen name="Maps" component={Maps} />
@@ -63,10 +72,7 @@ const AppNavigation = () => {
         <Stack.Screen name="ListData" component={ListData} />
         <Stack.Screen name="Get_Data" component={Get_Data} />
         <Stack.Screen name="DummyApi" component={DummyApi} />
-        <Stack.Screen name="Dropdown" component={Dropdown} />
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
-        <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
-        <Stack.Screen name="Tabe" component={Tabe} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="Registration" component={RegistrationScreen} />
         <Stack.Screen name="SplashScreen" component={SplashScreen} />

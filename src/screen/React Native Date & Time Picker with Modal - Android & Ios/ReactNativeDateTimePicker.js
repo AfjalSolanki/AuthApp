@@ -20,7 +20,7 @@ const ReactNativeDateTimePicker = () => {
     const dt = new Date(date);
     const x = dt.toISOString().split('T');
     const x1 = x[0].split('-');
-    console.log(x1[2] + '/' + x1[1] + '/' + x1[0]);
+    console.log('====date====', x1[2] + '/' + x1[1] + '/' + x1[0]);
     setSelectdDate(x1[2] + '/' + x1[1] + '/' + x1[0]);
     hideDatePicker();
   };
@@ -34,7 +34,7 @@ const ReactNativeDateTimePicker = () => {
     console.log('A time has been picked: ', date);
     const dt = new Date(date);
     const time = dt.toLocaleTimeString();
-    console.log(time);
+    console.log('====time===', time);
     setSelectdTime(time);
     hideTimePicker();
   };

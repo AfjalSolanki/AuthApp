@@ -12,6 +12,7 @@ import {
 } from '@react-navigation/drawer';
 import {colors, constant} from '../constant';
 import Icon from '../../../components/Icons';
+import ProjectsArray from '../arrays';
 const DrawerItem = ({
   name,
   onPress,
@@ -31,11 +32,11 @@ const DrawerItem = ({
       testID={tabBarTestID}
       accessibilityRole="button">
       <View style={[styles.iconContainer, {backgroundColor: color}]}>
-        <Icon type={type} name={Iname} color={colors.white} />
+        <Icon type={type} name={Iname} color={colors.dark} />
       </View>
       <Text style={[styles.lable]}>{name}</Text>
 
-      {/* {Drnotification > 0 && (
+      {Drnotification > 0 && (
         <View
           style={[
             styles.notficition,
@@ -46,11 +47,24 @@ const DrawerItem = ({
           ]}>
           <Text>{Drnotification}</Text>
         </View>
-      )} */}
+      )}
     </TouchableOpacity>
   );
 };
-
+// const ProjectItem = ({name, onPress, type, Iname, color, activeItemColor}) => {
+//   return (
+//     <TouchableOpacity
+//       onPress={() => {
+//         onPress();
+//       }}
+//       style={[styles.drawerItem, {backgroundColor: activeItemColor}]}>
+//       <View style={[styles.iconContainer, {backgroundColor: color}]}>
+//         <Icon type={type} name={Iname} color={colors.dark} />
+//       </View>
+//       <Text style={[styles.lable]}>{name}</Text>
+//     </TouchableOpacity>
+//   );
+// };
 const CustomDrawer1 = props => {
   const {state, descriptors, navigation} = props;
   return (
@@ -60,42 +74,53 @@ const CustomDrawer1 = props => {
         <Text>header</Text>
       </View>
       {/* Drawer Items List */}
-      <DrawerContentScrollView
-        {...props}
-        style={[styles.view, styles.marginVertical]}>
-        {state.routes.map((route, index) => {
-          const isFocused = state.index === index;
-          const {options} = descriptors[route.key];
+      <DrawerContentScrollView {...props} style={[styles.marginVertical]}>
+        <View style={styles.view}>
+          {state.routes.map((route, index) => {
+            const isFocused = state.index === index;
+            const {options} = descriptors[route.key];
 
-          const onPress = () => {
-            const event = navigation.emit({
-              type: 'tabPress',
-              target: route.key,
-            });
-            if (!isFocused && !event.defaultPrevented) {
-              navigation.navigate(route.name);
-            }
-          };
-          console.log('------', options);
-          // const color = isFocused ? colors.dark : colors.darkGray;
-          const activeItemColor = isFocused ? colors.primary : null;
-          const drawerItem = options.item;
-          console.log('---==========================---', drawerItem);
+            const onPress = () => {
+              const event = navigation.emit({
+                type: 'tabPress',
+                target: route.key,
+              });
+              if (!isFocused && !event.defaultPrevented) {
+                navigation.navigate(route.name);
+              }
+            };
+            console.log('------', options);
+            const color = isFocused ? colors.dark : colors.darkGray;
+            const activeItemColor = isFocused ? colors.primary : null;
+            const drawerItem = options.item;
+            console.log('---==========================---', drawerItem);
 
-          return (
-            <DrawerItem
-              key={index}
-              name={drawerItem.name}
-              tabBarTestID={options.tabBarTestID}
-              onPress={onPress}
-              Iname={drawerItem.icon}
-              type={drawerItem.type}
-              Drnotification={drawerItem.Drnotification}
-              color={drawerItem.color}
-              activeItemColor={activeItemColor}
+            return (
+              <DrawerItem
+                key={index}
+                name={drawerItem.name}
+                tabBarTestID={options.tabBarTestID}
+                onPress={onPress}
+                Iname={drawerItem.icon}
+                type={drawerItem.type}
+                Drnotification={drawerItem.Drnotification}
+                color={drawerItem.color}
+                activeItemColor={activeItemColor}
+              />
+            );
+          })}
+        </View>
+        {/* <View style={styles.view}>
+          {ProjectsArray.map((_, i) => (
+            <ProjectItem
+              lable={_.title}
+              type={_.iconType}
+              color={_.color}
+              name={_.icon}
             />
-          );
-        })}
+          ))}
+        </View> */}
+
         {/* {state.routes.map((item, index) => {
           return <Text>{'value'}</Text>;
         })} */}
@@ -118,7 +143,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   view: {
-    // backgroundColor: colors.white,
+    backgroundColor: colors.white,
     borderRadius: constant.borderRadius,
     marginHorizontal: constant.SPACING / 2,
     padding: constant.SPACING / 1.5,
@@ -129,7 +154,7 @@ const styles = StyleSheet.create({
   drawerItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    // padding: constant.SPACING / 2,
+    padding: constant.SPACING / 5,
     // justifyContent: 'space-between',
     borderRadius: constant.borderRadius,
   },
@@ -139,13 +164,14 @@ const styles = StyleSheet.create({
   },
   lable: {
     fontSize: constant.textFontSize,
-    color: colors.white,
+    color: colors.dark,
     paddingHorizontal: constant.SPACING,
   },
   notficition: {
     paddingVertical: constant.SPACING / 4,
     paddingHorizontal: constant.SPACING / 2,
     borderRadius: constant.borderRadius / 2,
+    marginLeft: 'auto',
   },
   iconContainer: {
     padding: constant.SPACING / 2.4,

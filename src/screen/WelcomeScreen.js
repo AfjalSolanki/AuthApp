@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, {useState, useRef} from 'react';
 import {
   View,
   Text,
@@ -6,24 +6,24 @@ import {
   StatusBar,
   FlatList,
   TouchableOpacity,
-  Animated
+  Animated,
 } from 'react-native';
 import Separator from '../components/Separator';
-import { Colors, Fonts, General } from '../contants';
-import { Display } from '../utils';
-import WelcomeCard from '../components/WelcomeCard'
-const WelcomeScreen = ({ navigation }) => {
+import {Colors, Fonts, General} from '../contants';
+import {Display} from '../utils';
+import WelcomeCard from '../components/WelcomeCard';
+const WelcomeScreen = ({navigation}) => {
   const [welcomeListIndex, setWelcomeListIndex] = useState(0);
   const welcomeList = useRef();
-  const onViewRef = useRef(({ changed }) => {
+  const onViewRef = useRef(({changed}) => {
     setWelcomeListIndex(changed[0].index);
   });
-  const viewConfigRef = useRef({ viewAreaCoveragePercentThreshold: 50 });
+  const viewConfigRef = useRef({viewAreaCoveragePercentThreshold: 50});
   const pageStyle = isActive =>
     isActive
       ? styles.page
-      : { ...styles.page, backgroundColor: Colors.DEFAULT_GREY };
-  const Pagination = ({ index }) => {
+      : {...styles.page, backgroundColor: Colors.DEFAULT_GREY};
+  const Pagination = ({index}) => {
     return (
       <View style={styles.pageContainer}>
         {[...Array(General.WELCOME_CONTENTS.length).keys()].map((_, i) =>
@@ -38,17 +38,13 @@ const WelcomeScreen = ({ navigation }) => {
   };
   const pageScroll = () => {
     welcomeList.current.scrollToIndex({
-      index: welcomeListIndex
-        < 2 ? welcomeListIndex + 1 :
-        welcomeListIndex,
+      index: welcomeListIndex < 2 ? welcomeListIndex + 1 : welcomeListIndex,
     });
   };
 
   const navigate = () => {
-    navigation.navigate('OnboardingScreen')
+    navigation.navigate('OnboardingScreen');
   };
-
-
 
   return (
     <View style={styles.container}>
@@ -70,7 +66,7 @@ const WelcomeScreen = ({ navigation }) => {
           overScrollMode="never"
           viewabilityConfig={viewConfigRef.current}
           onViewableItemsChanged={onViewRef.current}
-          renderItem={({ item }) => <WelcomeCard {...item} />}
+          renderItem={({item}) => <WelcomeCard {...item} />}
         />
       </View>
       <Separator height={Display.setHeight(8)} />
@@ -87,25 +83,23 @@ const WelcomeScreen = ({ navigation }) => {
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             activeOpacity={0.8}
-            style={{ marginLeft: 10 }}
-            onPress={() => welcomeList.current.scrollToEnd()}
-          >
+            style={{marginLeft: 10}}
+            onPress={() => welcomeList.current.scrollToEnd()}>
             <Text style={styles.buttonText}>SKIP</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             activeOpacity={0.8}
-            onPress={() => pageScroll()}
-          >
+            onPress={() => pageScroll()}>
             <Text style={styles.buttonText}>NEXT</Text>
           </TouchableOpacity>
         </View>
       )}
     </View>
-  )
-}
+  );
+};
 
-export default WelcomeScreen
+export default WelcomeScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -118,7 +112,6 @@ const styles = StyleSheet.create({
   },
   pageContainer: {
     flexDirection: 'row',
-
   },
   page: {
     height: 8,
