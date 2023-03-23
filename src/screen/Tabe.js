@@ -36,8 +36,8 @@ const Tabe = () => {
             height: Display.setHeight(8),
             backgroundColor: Colors.DEFAULT_WHITE,
             borderTopWidth: 0,
-            marginBottom: 20,
-            marginHorizontal: 20,
+            marginBottom: 0,
+            marginHorizontal: 0,
           },
           tabBarShowLabel: false,
           tabBarActiveTintColor: Colors.DEFAULT_GREEN,
@@ -186,13 +186,13 @@ const Tabe = () => {
       </Tab.Navigator>
       <Animated.View
         style={{
-          width: getWidth() - 37,
-          height: 2,
+          width: getWidth() - 27,
+          height: 5,
           backgroundColor: Colors.DEFAULT_GREEN,
           position: 'absolute',
-          bottom: 82,
-          left: 10,
-          borderRadius: 20,
+          bottom: 64,
+          left: 20,
+          borderRadius: 10,
           transform: [{translateX: tabOffsetValue}],
         }}></Animated.View>
     </NavigationContainer>

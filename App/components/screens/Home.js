@@ -19,7 +19,10 @@ const Home = () => {
           justifyContent: 'space-between',
           flexDirection: 'row',
           paddingHorizontal: 15,
+          marginVertical: 15,
+
           alignItems: 'center',
+          // backgroundColor:'red'
         }}>
         <FontAwesome name="plus-square-o" style={{fontSize: 24}} />
         <Text

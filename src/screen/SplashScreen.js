@@ -7,7 +7,7 @@
 //   useEffect(() => {
 //      setTimeout(() => {
 //       navigation.navigate('Welcome')
-//     }, 1500)   
+//     }, 1500)
 //   }, [])
 
 //   return (
@@ -43,10 +43,7 @@
 
 // export default SplashScreen;
 
-
-
-
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   Text,
@@ -54,17 +51,17 @@ import {
   Dimensions,
   StyleSheet,
   StatusBar,
-  Image
+  Image,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { useTheme } from '@react-navigation/native';
-import { Colors, Images } from '../contants';
+import {useTheme} from '@react-navigation/native';
+import {Colors, Images} from '../contants';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const SplashScreen = ({ navigation }) => {
-  const { colors } = useTheme();
+const SplashScreen = ({navigation}) => {
+  const {colors} = useTheme();
   useEffect(() => {
     setTimeout(() => {
       nextPage();
@@ -95,27 +92,34 @@ const SplashScreen = ({ navigation }) => {
         />
       </View>
       <Animatable.View
-        style={[styles.footer, {
-          backgroundColor: colors.background
-        }]}
-        animation="fadeInUpBig"
-      >
-        <Text style={[styles.title, {
-          color: colors.text
-        }]}>Find best food in your locality!</Text>
+        style={[
+          styles.footer,
+          {
+            backgroundColor: colors.background,
+          },
+        ]}
+        animation="fadeInUpBig">
+        <Text
+          style={[
+            styles.title,
+            {
+              color: colors.text,
+            },
+          ]}>
+          Find best food in your locality!
+        </Text>
         <Text style={styles.text}>Sign in with account</Text>
         <View style={styles.button}>
           <TouchableOpacity onPress={() => navigation.navigate('Registration')}>
             <LinearGradient
               colors={['#0A8791', '#0A8791']}
-              style={styles.signIn}
-            >
+              style={styles.signIn}>
               <Text style={styles.textSign}>Get Started</Text>
               <MaterialIcons
                 name="navigate-next"
                 color="#fff"
                 size={20}
-                style={{ marginTop: 3, marginStart: 10 }}
+                style={{marginTop: 3, marginStart: 10}}
               />
             </LinearGradient>
           </TouchableOpacity>
@@ -127,7 +131,7 @@ const SplashScreen = ({ navigation }) => {
 
 export default SplashScreen;
 
-const { height } = Dimensions.get("screen");
+const {height} = Dimensions.get('screen');
 const height_logo = height * 0.28;
 
 const styles = StyleSheet.create({
@@ -138,7 +142,7 @@ const styles = StyleSheet.create({
   header: {
     flex: 2,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   footer: {
     flex: 1,
@@ -146,24 +150,24 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingVertical: 50,
-    paddingHorizontal: 30
+    paddingHorizontal: 30,
   },
   logo: {
     width: height_logo,
-    height: height_logo
+    height: height_logo,
   },
   title: {
     color: '#05375a',
     fontSize: 30,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   text: {
     color: 'grey',
-    marginTop: 5
+    marginTop: 5,
   },
   button: {
     alignItems: 'flex-end',
-    marginTop: 30
+    marginTop: 30,
   },
   signIn: {
     width: 150,
@@ -171,12 +175,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 50,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   textSign: {
     color: 'white',
-    fontWeight: 'bold'
-  }
+    fontWeight: 'bold',
+  },
 });
-
-

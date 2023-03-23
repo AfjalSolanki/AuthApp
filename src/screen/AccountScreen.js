@@ -349,6 +349,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: 20,
+    // backgroundColor:'red'
   },
   menuItem: {
     flex: 1,
@@ -378,6 +379,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 10,
     paddingBottom: 20,
+    // backgroundColor:'red'
+
   },
   sectionHeaderText: {
     fontSize: 14,

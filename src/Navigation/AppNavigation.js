@@ -46,7 +46,14 @@ const AppNavigation = () => {
   const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Navigator
+        initialRouteName="HomeScreen"
+        screenOptions={{headerShown: false}}>
+                  <Stack.Screen name="HomeScreen" component={BottomTabs} />
+
+        <Stack.Screen name="ReduxScreen" component={ReduxScreen} />
+
+        <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="Tabe" component={Tabe} />
 
         <Stack.Screen name="Api" component={Api} />
@@ -65,17 +72,14 @@ const AppNavigation = () => {
         <Stack.Screen name="Signups" component={Signup} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="ApiDummy" component={ApiDummy} />
-        <Stack.Screen name="HomeScreen" component={BottomTabs} />
         <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
         <Stack.Screen name="Maps" component={Maps} />
-        <Stack.Screen name="ReduxScreen" component={ReduxScreen} />
         <Stack.Screen name="ListData" component={ListData} />
         <Stack.Screen name="Get_Data" component={Get_Data} />
         <Stack.Screen name="DummyApi" component={DummyApi} />
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="Registration" component={RegistrationScreen} />
-        <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="Signup" component={Signup} />
       </Stack.Navigator>
     </NavigationContainer>
