@@ -54,6 +54,8 @@ const CustomDrawerContent = props => {
         style={{
           marginLeft: 20,
           marginVertical: 40,
+          // marginVertical: 40,
+// 
         }}>
         <Image
           source={require('../assets/images/person.jpg')}
